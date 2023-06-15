@@ -6,9 +6,11 @@ import { trpc } from "../../utils/trpc";
 import CardViewer from "./CardViewer";
 
 const SearchContainer = () => {
-  const [isDisplaying, setIsDisplaying] = useState<boolean>(false);
+  
   const { data, isLoading } = trpc.card.getCards.useQuery();
+  const [isDisplaying, setIsDisplaying] = useState<boolean>(false);
   const [activeCard, setActiveCard] = useState<Card | null>(null);
+  
   return (
     <>
       <div
